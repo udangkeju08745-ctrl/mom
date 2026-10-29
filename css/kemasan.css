@@ -1,0 +1,203 @@
+/* ============================================================
+   KEMASAN — "Tarik resletingnya"
+   Satu-satunya sumber gaya untuk #kemasan (prefix kx-).
+   ============================================================ */
+:root{--kx-bg:#f3bd2f;--kx-deep:#ff3308;--kx-wine:#fe3208;--kx-rose:#fe3008;--kx-gold:#ffd45a;--kx-gold-d:#c88a1a}
+#kemasan{--kx-accent:#ffcc42;--kw:64px}
+/* Warna section: kuning emas berlapis (cahaya hangat + bayangan amber) dengan teks anggur tua → kesan mewah.
+   Warna dasar tepat di tepi atas = --kx-bg supaya menyatu dengan gelombang pembatas. */
+.package-section{background-color:var(--kx-bg);color:var(--kx-wine);
+  background-image:
+    radial-gradient(ellipse 52% 38% at 16% 30%,rgba(255,246,196,.78),transparent 72%),
+    radial-gradient(ellipse 44% 34% at 90% 42%,rgba(255,236,160,.62),transparent 72%),
+    radial-gradient(ellipse 52% 42% at 4% 96%,rgba(205,126,8,.55),transparent 72%),
+    radial-gradient(ellipse 46% 38% at 98% 98%,rgba(196,112,6,.42),transparent 72%),
+    linear-gradient(168deg,#f3bd2f 0%,#f6c640 38%,#efb226 72%,#e6a01a 100%)}
+.package-section em{color:var(--kx-rose)}
+/* garis diagonal halus + titik emas */
+.package-section .package-lines{opacity:.16;background:repeating-linear-gradient(120deg,transparent 0 92px,rgba(253,50,8,.55) 92px 93px)}
+.package-section::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.22;
+  background-image:radial-gradient(rgba(255,51,8,.7) 1px,transparent 1.5px);background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 55%,transparent 30%,#000 100%);mask-image:radial-gradient(ellipse 70% 60% at 50% 55%,transparent 30%,#000 100%)}
+.package-section::after{opacity:.55!important;mix-blend-mode:soft-light}
+
+/* Judul section */
+.package-section .section-title .eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.26em;color:#fe3208}
+.package-section .section-title .eyebrow::before,.package-section .section-title .eyebrow::after{content:'';width:34px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#b87a10)}
+.package-section .section-title .eyebrow::after{background:linear-gradient(90deg,#b87a10,transparent)}
+.package-section .section-title h2{color:var(--kx-wine);text-shadow:0 1px 0 rgba(255,246,196,.55)}
+.package-section .section-title h2 em{background:linear-gradient(100deg,#f12707,#ff3908 55%,#f12707);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none}
+.package-section .section-title p:not(.eyebrow){color:rgba(254,50,8,.82)}
+
+.kx{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+
+/* Warna krim (sama dengan bagian FAQ) */
+#kemasan{--kx-cream:#fff6df;--kx-cream-2:#faedd0;--kx-cream-3:#f3dfb2;--kx-ring:rgba(200,138,26,.55)}
+
+/* ---------- Panggung kantong (krim) ---------- */
+.kx-stage{position:relative;height:clamp(420px,46vw,560px);border-radius:44px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;overflow:hidden;
+  border:2px solid transparent;
+  background:
+    radial-gradient(ellipse 64% 48% at 50% 40%,rgba(255,255,255,.85),transparent 72%) padding-box,
+    radial-gradient(ellipse 46% 34% at 100% 0%,rgba(255,204,66,.34),transparent 72%) padding-box,
+    radial-gradient(ellipse 90% 40% at 50% 114%,rgba(246,189,149,.55),transparent 70%) padding-box,
+    linear-gradient(165deg,#fff9e9 0%,var(--kx-cream-2) 58%,var(--kx-cream-3) 100%) padding-box,
+    linear-gradient(135deg,#fff0b0,#c88a1a 28%,#ffe38a 50%,#b87a10 74%,#ffe9a0) border-box;
+  box-shadow:0 40px 70px -34px rgba(253,50,8,.5),0 0 0 6px rgba(255,246,196,.5),inset 0 0 0 9px rgba(255,248,225,.75),inset 0 0 0 10px rgba(200,138,26,.4),inset 0 -50px 80px -50px rgba(200,138,26,.3)}
+/* titik halus + cahaya lembut dari atas */
+.kx-stage::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.3;background-image:radial-gradient(rgba(176,108,16,.55) 1px,transparent 1.5px);background-size:22px 22px;-webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 50%,transparent 38%,#000 100%);mask-image:radial-gradient(ellipse 60% 55% at 50% 50%,transparent 38%,#000 100%)}
+.kx-stage::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:conic-gradient(from 180deg at 50% -8%,transparent 0 142deg,rgba(255,255,255,.5) 160deg,transparent 176deg 184deg,rgba(255,255,255,.5) 200deg,transparent 218deg);
+  -webkit-mask-image:linear-gradient(to bottom,#000,transparent 78%);mask-image:linear-gradient(to bottom,#000,transparent 78%)}
+.kx-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:2}
+.kx-meter{position:absolute;left:clamp(18px,3vw,34px);top:clamp(16px,2.4vw,26px);display:flex;gap:6px;z-index:30;pointer-events:none}
+.kx-meter i{--f:0;position:relative;width:clamp(26px,3.4vw,40px);height:8px;border-radius:8px;background:rgba(254,50,8,.12);overflow:hidden;box-shadow:inset 0 0 0 1px rgba(254,50,8,.1)}
+.kx-meter i::after{content:'';position:absolute;inset:0;border-radius:inherit;transform-origin:left center;transform:scaleX(var(--f));background:linear-gradient(90deg,#ffd45a,#e59a12)}
+.kx-stage.is-drag{cursor:grabbing}
+.kx-glow{position:absolute;left:50%;top:48%;width:78%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,color-mix(in srgb,var(--kx-accent) 62%,transparent) 0%,color-mix(in srgb,var(--kx-accent) 22%,transparent) 48%,transparent 70%);
+  transform:scale(var(--kx-g,1));transition:background .6s;filter:blur(6px);z-index:1}
+.kx-word{position:absolute;left:0;right:0;top:6%;text-align:center;white-space:nowrap;font:400 clamp(86px,13vw,190px)/.9 var(--display);letter-spacing:-.02em;color:rgba(200,138,26,.15);z-index:1;
+  transform:translate3d(0,0,0) rotate(-7deg);pointer-events:none;will-change:transform}
+.kx-packs{position:absolute;inset:0 0 9%;pointer-events:none;animation:kx-breathe 5.2s ease-in-out infinite alternate}
+@keyframes kx-breathe{from{translate:0 -5px}to{translate:0 7px}}
+
+.kx-count{position:absolute;left:clamp(18px,3vw,34px);bottom:clamp(14px,2.4vw,28px);display:flex;align-items:flex-end;gap:12px;pointer-events:none;z-index:30}
+.kx-count strong{font:400 clamp(72px,9vw,124px)/.82 var(--display);color:#fe3008;display:block;text-shadow:0 5px 0 rgba(255,204,66,.9),0 12px 18px rgba(253,50,8,.18)}
+.kx-count span{font-size:13px;font-weight:800;line-height:1.3;padding-bottom:6px;color:var(--kx-wine)}
+.kx-drag-tip{position:absolute;right:clamp(16px,2.6vw,30px);bottom:clamp(18px,2.6vw,30px);font-size:12px;font-weight:800;padding:8px 14px;border-radius:50px;background:rgba(255,255,255,.65);color:#fe3208;box-shadow:inset 0 0 0 1px rgba(200,138,26,.45);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);pointer-events:none;z-index:30;transition:opacity .5s,translate .5s}
+.kx.is-touched .kx-drag-tip{opacity:0;translate:0 8px}
+.kx-crumb{position:absolute;pointer-events:none;z-index:25;will-change:transform,opacity;box-shadow:0 1px 2px rgba(253,50,8,.4),inset 0 0 0 1px rgba(150,36,5,.28)}
+
+/* ---------- Panel kontrol ---------- */
+.kx-ctl{display:contents}
+.kx-panel{position:relative;padding:clamp(20px,2.6vw,34px);border-radius:36px;border:2px solid transparent;
+  background:linear-gradient(170deg,#fffdf5,#fff3d3) padding-box,linear-gradient(135deg,#fff3b8,#d49a22 30%,#fff0a8 52%,#bf8312 78%,#ffe9a0) border-box;
+  box-shadow:0 30px 56px -28px rgba(245,49,7,.5),0 0 0 6px rgba(255,246,196,.4),inset 0 1px 0 #fff}
+
+/* pilihan rasa → kontrol segmen, 3 kolom sama lebar (tidak perlu digeser) */
+.kx-flavors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:5px;margin-bottom:24px;border-radius:60px;background:rgba(254,50,8,.07);box-shadow:inset 0 1px 3px rgba(254,50,8,.14)}
+.kx-flavors button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 10px;border-radius:50px;font-size:14px;font-weight:800;color:#fe3208;background:transparent;white-space:nowrap;transition:background .3s,color .3s,box-shadow .3s,transform .3s cubic-bezier(.3,1.6,.5,1)}
+.kx-flavors button i{flex:none;width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 0 3px rgba(254,50,8,.18);transition:box-shadow .3s}
+.kx-flavors button:hover{transform:translateY(-1px)}
+.kx-flavors button[aria-pressed=true]{background:linear-gradient(180deg,#ff6a22,#f12c07);color:#fffaf0;box-shadow:0 8px 16px -8px rgba(250,50,8,.75),inset 0 0 0 1px rgba(255,212,90,.35)}
+.kx-flavors button[aria-pressed=true] i{box-shadow:0 0 0 2px #f12c07,0 0 0 4px rgba(255,212,90,.7)}
+
+.kx-mood{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--kx-rose);margin-bottom:8px;padding:5px 12px 5px 10px;border-radius:50px;background:rgba(255,51,8,.08)}
+.kx-mood::before{content:'✦';font-size:11px;color:var(--kx-gold-d)}
+.kx-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.kx-head h3{font-size:clamp(24px,2.5vw,32px);color:var(--kx-wine);min-width:0}
+.kx-head output{font:800 clamp(38px,4.4vw,56px)/1 var(--heading);letter-spacing:-.05em;white-space:nowrap;display:inline-block;color:var(--kx-wine)}
+
+/* ---------- Rail resleting ---------- */
+.kx-rail{position:relative;height:96px;margin:14px 0 4px;touch-action:pan-y;cursor:grab;outline-offset:2px;border-radius:30px;user-select:none;-webkit-user-select:none}
+.kx-rail.is-drag{cursor:grabbing}
+.kx-track{position:absolute;left:0;right:0;top:50%;height:24px;margin-top:-12px;border-radius:24px;background:linear-gradient(180deg,#f12c07,#ff3408);box-shadow:inset 0 2px 5px rgba(0,0,0,.5),0 0 0 2px rgba(255,246,196,.95),0 0 0 3px rgba(200,138,26,.55)}
+.kx-teeth{position:absolute;inset:5px 10px;border-radius:12px;opacity:.5;
+  background:repeating-linear-gradient(90deg,var(--cream) 0 3px,transparent 3px 8px)}
+.kx-teeth::after{content:'';position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:rgba(29,17,7,.7)}
+.kx-open{position:absolute;left:0;top:0;bottom:0;width:var(--kx-fill,32px);border-radius:24px;background:linear-gradient(180deg,#fff0a8,var(--kx-gold) 50%,#e9a91b);
+  box-shadow:0 0 22px rgba(255,200,60,.65)}
+.kx-open::after{content:'';position:absolute;inset:7px 12px 7px 10px;border-radius:10px;background:repeating-linear-gradient(90deg,rgba(254,50,8,.32) 0 3px,transparent 3px 9px);opacity:.65}
+.kx-notch{position:absolute;top:50%;left:calc(var(--kw)/2 + (100% - var(--kw))*var(--i)/4);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--kx-deep);box-shadow:0 0 0 3px rgba(255,226,150,.85);z-index:1}
+.kx-knob{position:absolute;left:0;top:50%;width:var(--kw);height:var(--kw);margin-top:calc(var(--kw)/-2);display:grid;place-items:center;border-radius:50%;z-index:3;
+  background:radial-gradient(circle at 34% 28%,#fff6c8,var(--kx-gold) 52%,#d9951a);color:var(--kx-wine);border:5px solid #fffaf0;
+  box-shadow:0 10px 18px rgba(250,50,8,.45),0 0 0 2px #c88a1a,0 0 22px rgba(255,200,60,.45);will-change:transform;transition:box-shadow .25s}
+.kx-knob svg{width:34px;height:34px}
+.kx-rail.is-drag .kx-knob{box-shadow:0 14px 26px rgba(0,0,0,.42),0 0 0 8px rgba(255,204,66,.28),0 0 0 1px rgba(254,50,8,.2)}
+.kx-rail:focus-visible{outline:3px solid #fe3208}
+.kx-rail:focus-visible .kx-knob{box-shadow:0 0 0 6px rgba(255,224,122,.55)}
+.kx-pull{position:absolute;left:calc(var(--kw) + 18px);top:calc(50% - 42px);white-space:nowrap;font-size:13px;font-weight:800;color:var(--kx-rose);pointer-events:none;transition:opacity .4s}
+.kx-pull b{display:inline-block;animation:kx-nudge 1.1s ease-in-out infinite}
+@keyframes kx-nudge{0%,100%{translate:0 0}50%{translate:7px 0}}
+.kx.is-touched .kx-pull{opacity:0}
+
+/* pilihan berat → kartu kecil */
+.kx-stops{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:4px}
+.kx-stops button{padding:9px 4px;border-radius:16px;font-size:15px;font-weight:800;color:rgba(254,50,8,.7);min-height:60px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1.5px rgba(200,138,26,.28);transition:background .25s,color .25s,box-shadow .25s,transform .25s}
+.kx-stops button:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px rgba(200,138,26,.6)}
+.kx-stops button.selected{background:linear-gradient(180deg,#ffe58a,#ffcc42);color:var(--kx-wine);box-shadow:inset 0 0 0 2px #b87a10,0 8px 14px -8px rgba(255,50,8,.7)}
+.kx-stops small{display:block;font-size:11px;font-weight:700;margin-top:2px;opacity:.85}
+
+/* harga → kartu tiket */
+.kx-price{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:22px 0 18px;padding:16px 18px;border-radius:22px;border:1.5px dashed var(--kx-ring);font-size:13px;font-weight:600;color:rgba(254,50,8,.78);
+  background:linear-gradient(135deg,rgba(255,204,66,.22),rgba(246,189,149,.26))}
+.kx-price>span:last-child{text-align:right}
+.kx-price strong{display:block;font:800 clamp(34px,4vw,46px)/1.05 var(--heading);letter-spacing:-.045em;font-variant-numeric:tabular-nums;color:var(--kx-wine)}
+.kx-add{position:relative;overflow:hidden;width:100%;min-height:58px;justify-content:space-between;color:#fffaf0;background:linear-gradient(180deg,#ff6a22,#f12c07);box-shadow:0 16px 28px -14px rgba(250,50,8,.8),inset 0 0 0 1.5px rgba(255,212,90,.55);transition:transform .25s,box-shadow .25s,filter .25s}
+.kx-add>span:last-child{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,212,90,.18);box-shadow:inset 0 0 0 1px rgba(255,212,90,.5);font-size:22px;line-height:1}
+.kx-add::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:36%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-20deg);animation:kx-shine 4s ease-in-out infinite;pointer-events:none}
+@keyframes kx-shine{0%,55%{left:-60%}100%{left:130%}}
+.kx-add:hover{filter:brightness(1.12);box-shadow:0 20px 34px -14px rgba(250,50,8,.85),inset 0 0 0 1.5px rgba(255,226,150,.9)}
+.kx-help{font-size:13px;line-height:1.55;margin-top:16px;color:rgba(254,50,8,.76)}
+.kx-link{display:inline-flex;align-items:center;min-height:36px;font-size:14px;font-weight:800;margin-top:8px;color:var(--kx-rose);border-bottom:1.5px solid rgba(255,51,8,.5)}
+
+/* ---------- Tablet & HP ---------- */
+/* Urutan: rasa → panggung → kartu kontrol (nama, tuas, berat) → harga → tombol. */
+@media(max-width:900px){
+  .kx{display:flex;flex-direction:column;gap:0;max-width:620px;margin-inline:auto}
+  .kx-panel{display:contents}
+  .kx>*,.kx-panel>*{width:100%}
+  .kx-flavors{order:0;margin-bottom:14px}
+  .kx-stage{order:1;height:clamp(300px,80vw,420px);border-radius:34px}
+  /* penghitung jadi pil kaca terang di pojok kanan atas */
+  .kx-count{left:auto;right:14px;top:12px;bottom:auto;align-items:center;gap:7px;padding:5px 14px 5px 11px;border-radius:50px;
+    background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(200,138,26,.5),0 6px 14px -8px rgba(253,50,8,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .kx-count strong{font-size:26px;line-height:1;text-shadow:none}
+  .kx-count span{font-size:11px;padding-bottom:0;line-height:1.15}
+  .kx-meter{left:16px;top:20px}
+  .kx-meter i{width:30px;height:7px}
+
+  /* kartu kontrol */
+  .kx-ctl{order:2;display:block;margin-top:14px;padding:16px 16px 12px;border-radius:30px;border:2px solid transparent;
+    background:linear-gradient(170deg,#fffdf5,#fff3d3) padding-box,linear-gradient(135deg,#fff3b8,#d49a22 30%,#fff0a8 52%,#bf8312 78%,#ffe9a0) border-box;
+    box-shadow:0 22px 40px -26px rgba(245,49,7,.55),0 0 0 5px rgba(255,246,196,.4)}
+  .kx-panel{background:none;border:0;box-shadow:none}
+  .kx-mood{margin:0 0 6px;font-size:12.5px}
+  .kx-head h3{font-size:clamp(19px,5.4vw,24px)}
+  .kx-head output{font-size:clamp(30px,8.6vw,38px)}
+  .kx-rail{margin:6px 0 0;height:78px}
+  .kx-track{height:28px;margin-top:-14px}
+  .kx-pull{top:calc(50% - 34px);font-size:12px}
+  .kx-stops{gap:6px;margin:0}
+  .kx-stops button{min-height:50px}
+
+  /* harga + tombol */
+  .kx-price{order:3;margin:14px 0 12px}
+  .kx-add{order:4;font-size:17px}
+  .kx-add:active{transform:scale(.975)}
+  .kx-help{order:5;padding-inline:4px}
+  .kx-link{order:6;width:auto;margin-inline:4px}
+}
+@media(max-width:480px){
+  #kemasan{--kw:56px}
+  .kx-stage{height:clamp(250px,72vw,310px);border-radius:28px}
+  .kx-word{top:8%;font-size:84px}
+  .kx-flavors{padding:4px;margin-bottom:12px}
+  .kx-flavors button{min-height:38px;gap:6px;padding:8px 6px;font-size:13px}
+  .kx-flavors button i{width:14px;height:14px}
+  .kx-ctl{padding:12px 12px 8px;border-radius:24px;margin-top:10px}
+  .kx-add{min-height:52px;font-size:16px}
+  .kx-help{font-size:12px;margin-top:10px}
+  .kx-stops button{padding:6px 2px}
+  .kx-stops{gap:5px}
+  .kx-stops button{font-size:14px;padding:8px 2px;border-radius:14px}
+  .kx-stops small{font-size:10.5px}
+  .kx-price{padding:11px 14px;border-radius:18px;margin:10px 0}
+  .kx-price strong{font-size:clamp(27px,8vw,33px)}
+  .kx-price>span:last-child{font-size:12px}
+  .kx-drag-tip{display:none}
+}
+@media(max-width:360px){
+  .kx-meter i{width:20px}
+  .kx-price{gap:8px;padding:12px}
+  .kx-price strong{font-size:29px}
+  .kx-price>span:last-child{font-size:11px;white-space:nowrap}
+  .kx-add{font-size:15px;padding-inline:18px}
+  .kx-head{flex-wrap:wrap;row-gap:0}
+  .kx-flavors button{font-size:12.5px;gap:5px}
+  .kx-stops button{font-size:13px}
+}
+
+.motion-paused .kx-pull b,.motion-paused .kx-add::after{animation:none}
+@media(prefers-reduced-motion:reduce){.kx-pull b,.kx-add::after{animation:none}.kx-glow,.kx-knob{transition:none}}

@@ -1,0 +1,51 @@
+/* ============================================================
+   PEMBATAS LENGKUNG BESAR — pengganti gelombang
+   Satu busur elips lebar (seperti lingkaran besar) antar-section,
+   ditambah garis putus-putus yang mengikuti lengkungnya.
+   Warna tetap memakai --up / --down / --ln dari tiap pembatas.
+   ============================================================ */
+.wave{--wh:clamp(110px,15vw,250px);--rx:53%;--ry:94%;height:var(--wh);overflow:hidden;isolation:isolate}
+.wave.in-hero{--wh:clamp(84px,12vw,200px)}
+.wave svg{display:none!important}
+
+/* Bagian bawah (warna --down) dengan lubang elips di atasnya → tepi atas melengkung besar */
+.wave::before{
+  content:"";position:absolute;inset:0;z-index:0;background:var(--down);
+  -webkit-mask:radial-gradient(ellipse var(--rx) var(--ry) at 50% 0%,transparent 99.4%,#000 100%);
+          mask:radial-gradient(ellipse var(--rx) var(--ry) at 50% 0%,transparent 99.4%,#000 100%);
+}
+/* Cincin putus-putus tipis mengikuti lengkung */
+.wave::after{
+  content:"";position:absolute;z-index:1;left:calc(50% - var(--rx));width:calc(var(--rx)*2);
+  top:calc(var(--ry)*-1 + clamp(10px,1.6vw,22px));height:calc(var(--ry)*2);
+  border-radius:50%;border:2.5px dotted var(--ln);box-sizing:border-box;pointer-events:none;
+}
+/* Bayangan lembut agar lengkungnya terasa timbul */
+.wave{filter:drop-shadow(0 -2px 0 rgba(255,255,255,.18))}
+@media(max-width:700px){
+  .wave{--wh:clamp(84px,24vw,130px);--rx:68%;--ry:92%}
+  .wave.in-hero{--wh:72px}
+  .wave::after{border-width:2px}
+}
+
+/* ---------- Pembatas di sekitar panel video (galeri) ---------- */
+.gl-wave{--rx:53%;--ry:94%;--ln:rgba(255,246,223,.6);height:var(--gl-wh);overflow:hidden;isolation:isolate}
+.gl{--gl-wh:clamp(110px,15vw,250px)}
+.gl-wave svg{display:none!important}
+.gl-wave::before{
+  content:"";position:absolute;inset:0;z-index:0;background:var(--down);
+  -webkit-mask:radial-gradient(ellipse var(--rx) var(--ry) at 50% 0%,transparent 99.4%,#000 100%);
+          mask:radial-gradient(ellipse var(--rx) var(--ry) at 50% 0%,transparent 99.4%,#000 100%);
+}
+.gl-wave::after{
+  content:"";position:absolute;z-index:1;left:calc(50% - var(--rx));width:calc(var(--rx)*2);
+  top:calc(var(--ry)*-1 + clamp(10px,1.6vw,22px));height:calc(var(--ry)*2);
+  border-radius:50%;border:2.5px dotted var(--ln);box-sizing:border-box;pointer-events:none;
+}
+.gl-wave-top{transform:none;background:none;--down:#3a2a1f}
+.gl-wave-bot{background:#24170f;--down:var(--peach,#f6bd95)}
+@media(max-width:700px){
+  .gl{--gl-wh:clamp(84px,24vw,130px)}
+  .gl-wave{--rx:68%;--ry:92%}
+  .gl-wave::after{border-width:2px}
+}
