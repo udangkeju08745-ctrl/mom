@@ -1,0 +1,27 @@
+/* ============================================================
+   TENTANG · GAYA JUDUL MENU — judul pakai Anton kapital + bayangan 3D (seperti "TIM KEJU, BAWANG,")
+   Teks isi: Figtree tebal, cokelat tua; kata penting merah. Hapus file ini untuk kembali ke gaya lama.
+   ============================================================ */
+#tentang{--tt-red:#e92a0c;--tt-orange:#ff7a00;--tt-ink:#5e1500;--tt-display:'Anton','Bebas Neue',Impact,'Arial Narrow',sans-serif}
+
+/* label kecil di atas judul */
+#tentang .about-copy .eyebrow{display:inline-flex;align-items:center;gap:10px;width:fit-content;rotate:-2.5deg;
+  padding:12px 26px 10px;background:#fff;color:var(--tt-red);border-radius:999px;
+  font:400 clamp(15px,1.45vw,21px)/1 var(--tt-display);letter-spacing:.07em;text-transform:uppercase;
+  box-shadow:0 6px 0 rgba(170,60,0,.25)}
+
+/* judul */
+#tentang .about-copy h2{font:400 clamp(38px,5.6vw,88px)/1.02 var(--tt-display);text-transform:uppercase;letter-spacing:.008em;
+  color:var(--tt-red);text-shadow:.04em .05em 0 #fff,.075em .095em 0 rgba(150,30,0,.3)}
+#tentang .about-copy h2 em{font-style:normal;background:none;-webkit-text-fill-color:var(--tt-orange);color:var(--tt-orange);
+  text-shadow:.035em .05em 0 #a31d00}
+
+/* paragraf */
+#tentang .about-copy p:not(.eyebrow){font:600 clamp(16px,1.3vw,19.5px)/1.75 'Figtree',var(--body,system-ui),sans-serif;
+  color:var(--tt-ink);max-width:54ch}
+#tentang .about-copy p b{color:var(--tt-red);font-weight:800}
+
+/* angka ringkas */
+#tentang .about-facts span{font:700 clamp(11px,.95vw,13px)/1.2 'Figtree',var(--body,system-ui),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--tt-ink)}
+#tentang .about-facts strong{display:block;margin-bottom:6px;font:400 clamp(30px,3.2vw,48px)/1 var(--tt-display);letter-spacing:.01em;text-transform:none;
+  color:var(--tt-red);text-shadow:0 .06em 0 rgba(255,255,255,.85)}

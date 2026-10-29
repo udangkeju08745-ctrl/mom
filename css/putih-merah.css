@@ -1,0 +1,120 @@
+/* ============================================================
+   PUTIH · MERAH — menggantikan oranye / peach / kuning
+   • Menu  : latar merah tebal, judul krem raksasa, kata terakhir
+             kuning, stiker putih miring (gaya "KECIL BENTUKNYA.")
+   • Kartu, Kemasan, Galeri, Momen : permukaan putih, teks merah
+   Dimuat paling akhir → cukup hapus file ini untuk kembali.
+   ============================================================ */
+:root{
+  --pm-red:#f93517; --pm-red-d:#d9230a; --pm-cream:#f9e9d2; --pm-yellow:#ffd94a;
+  --pm-white:#ffffff; --pm-white-2:#fffaf4; --pm-white-3:#fff3ea;
+  --kx-bg:#b51604;--kx-gold:#ffd94a;--kx-gold-d:#ffd94a
+}
+.mn-edge--bottom{background:var(--pm-red)}
+
+/* ───────── KEMASAN : merah tua + teks kuning ───────── */
+#kemasan{--kx-wine:#ffd94a;--kx-rose:#ffe680;--kx-accent:#ffd94a;--kx-ring:rgba(255,217,74,.6);--kx-deep:#ffd94a}
+.package-section{
+  background-color:#b51604;
+  background-image:
+    radial-gradient(ellipse 55% 40% at 14% 22%,rgba(255,96,56,.5),transparent 72%),
+    radial-gradient(ellipse 50% 40% at 92% 40%,rgba(255,150,60,.28),transparent 72%),
+    radial-gradient(ellipse 70% 40% at 50% 112%,rgba(50,0,0,.55),transparent 70%),
+    linear-gradient(168deg,#d11e06 0%,#bb1805 55%,#8f0d00 100%)}
+.package-section .package-lines{opacity:.22;background:repeating-linear-gradient(120deg,transparent 0 92px,rgba(255,217,74,.5) 92px 93px)}
+.package-section::before{opacity:.18;background-image:radial-gradient(rgba(255,217,74,.8) 1px,transparent 1.5px)}
+.package-section .section-title h2{color:#ffd94a;text-shadow:0 .04em 0 rgba(90,4,0,.45)}
+.package-section .section-title h2 em{background:none;color:#fff;-webkit-text-fill-color:#fff}
+.package-section .section-title p:not(.eyebrow){color:#fff1d6!important;opacity:1}
+.package-section .section-title .eyebrow{color:#ffd94a}
+.package-section .section-title .eyebrow::before{background:linear-gradient(90deg,transparent,#ffd94a)}
+.package-section .section-title .eyebrow::after{background:linear-gradient(90deg,#ffd94a,transparent)}
+
+/* panggung: sorot kuning + sinar matahari di atas merah */
+.kx-stage{
+  background:
+    radial-gradient(ellipse 58% 13% at 50% 91%,rgba(60,0,0,.5),transparent 72%) padding-box,
+    radial-gradient(circle at 50% 54%,rgba(255,240,170,.98) 0%,rgba(255,206,84,.8) 24%,rgba(255,130,40,.4) 46%,transparent 68%) padding-box,
+    repeating-conic-gradient(from 0deg at 50% 56%,rgba(255,217,74,.16) 0 5deg,transparent 5deg 10deg) padding-box,
+    linear-gradient(165deg,#f0300f 0%,#cc1c05 55%,#9a0f00 100%) padding-box,
+    linear-gradient(135deg,#fff0b0,#e0a020 30%,#ffe38a 52%,#c88a1a 76%,#ffe9a0) border-box;
+  box-shadow:0 40px 70px -30px rgba(40,0,0,.8),0 0 0 6px rgba(255,217,74,.28),inset 0 0 0 9px rgba(255,217,74,.12),inset 0 0 0 10px rgba(255,217,74,.55),inset 0 -60px 90px -50px rgba(60,0,0,.55)}
+.kx-stage::before{opacity:.35;background-image:radial-gradient(rgba(255,230,140,.9) 1px,transparent 1.5px)}
+.kx-stage::after{background:conic-gradient(from 180deg at 50% -8%,transparent 0 142deg,rgba(255,255,255,.4) 160deg,transparent 176deg 184deg,rgba(255,255,255,.4) 200deg,transparent 218deg)}
+.kx-word{color:rgba(255,255,255,.14);-webkit-text-stroke:2px rgba(255,217,74,.35)}
+.kx-count strong{color:#ffd94a;text-shadow:0 5px 0 rgba(110,6,0,.75),0 14px 22px rgba(60,0,0,.45)}
+.kx-count span{color:#fff;text-shadow:0 2px 0 rgba(110,6,0,.6)}
+.kx-meter i{background:rgba(255,255,255,.25);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.kx-drag-tip{background:rgba(255,255,255,.9);color:#c01500}
+
+/* panel kontrol: kaca merah tua */
+.kx-panel{
+  background:linear-gradient(170deg,#d9210a,#a60f00) padding-box,linear-gradient(135deg,#fff0b0,#e0a020 30%,#ffe38a 52%,#c88a1a 78%,#ffe9a0) border-box;
+  box-shadow:0 30px 56px -26px rgba(40,0,0,.8),0 0 0 6px rgba(255,217,74,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.kx-flavors{background:rgba(60,0,0,.35);box-shadow:inset 0 1px 3px rgba(0,0,0,.35)}
+.kx-flavors button{color:#ffe9a0}
+.kx-flavors button[aria-pressed=true]{background:linear-gradient(180deg,#ffe36e,#ffc928);color:#b01200;box-shadow:0 8px 16px -8px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.6)}
+.kx-flavors button[aria-pressed=true] i{box-shadow:0 0 0 2px #b01200,0 0 0 4px rgba(255,255,255,.7)}
+.kx-flavors button i{box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 0 3px rgba(0,0,0,.2)}
+.kx-mood{color:#ffd94a;background:rgba(255,255,255,.14)}
+.kx-mood::before{color:#fff}
+.kx-head h3{color:#ffd94a;text-shadow:0 2px 0 rgba(90,4,0,.4)}
+.kx-head output{color:#fff;text-shadow:0 3px 0 rgba(90,4,0,.45)}
+.kx-track{background:linear-gradient(180deg,#6e0900,#940e00);box-shadow:inset 0 2px 5px rgba(0,0,0,.55),0 0 0 2px rgba(255,217,74,.8),0 0 0 3px rgba(120,8,0,.6)}
+.kx-notch{background:#ffd94a;box-shadow:0 0 0 3px rgba(110,6,0,.55)}
+.kx-knob{color:#b01200}
+.kx-pull{color:#ffd94a}
+.kx-stops button{color:#fff;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1.5px rgba(255,217,74,.35)}
+.kx-stops button:hover{box-shadow:inset 0 0 0 1.5px #ffd94a}
+.kx-stops button.selected{background:linear-gradient(180deg,#ffe36e,#ffc928);color:#b01200;box-shadow:inset 0 0 0 2px #fff,0 8px 14px -8px rgba(0,0,0,.6)}
+.kx-price{color:#fff1d6;border-color:rgba(255,217,74,.7);background:linear-gradient(135deg,rgba(60,0,0,.32),rgba(60,0,0,.18))}
+.kx-price strong{color:#fff;text-shadow:0 3px 0 rgba(90,4,0,.4)}
+.kx-add{color:#b01200;background:linear-gradient(180deg,#ffe36e,#ffc928);box-shadow:0 16px 28px -14px rgba(0,0,0,.7),inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.kx-add>span:last-child{background:rgba(176,18,0,.14);box-shadow:inset 0 0 0 1px rgba(176,18,0,.4)}
+.kx-add:hover{box-shadow:0 20px 34px -14px rgba(0,0,0,.75),inset 0 0 0 1.5px #fff}
+.kx-help{color:rgba(255,241,214,.9)}
+.kx-link{color:#ffd94a;border-bottom-color:rgba(255,217,74,.6)}
+
+@media(max-width:900px){
+  .kx-ctl{background:linear-gradient(170deg,#d9210a,#a60f00) padding-box,linear-gradient(135deg,#fff0b0,#e0a020 30%,#ffe38a 52%,#c88a1a 78%,#ffe9a0) border-box;
+    box-shadow:0 22px 40px -22px rgba(40,0,0,.8),0 0 0 5px rgba(255,217,74,.2)}
+  .kx-panel{background:none;box-shadow:none}
+  .kx-count{background:rgba(110,6,0,.55);box-shadow:inset 0 0 0 1px rgba(255,217,74,.6),0 6px 14px -8px rgba(0,0,0,.6)}
+  .kx-count strong{text-shadow:none}
+}
+
+/* ───────── GALERI · MOMEN : putih ───────── */
+.promo-section{background:var(--pm-white)}
+.moments-section{background:var(--pm-white-3)}
+.moments-grid article{border-top-color:rgba(249,53,23,.3)}
+.promo-section .video-choice{border-color:rgba(249,53,23,.2)}
+
+/* ───────── Pembatas lengkung antar-section ───────── */
+.wave[style*="--up:var(--kx-bg"]{--down:var(--pm-white)!important;--up:#8f0d00!important}
+.wave[style*="--up:var(--peach)"]{--up:var(--pm-white)!important;--down:var(--pm-white-3)!important}
+.wave[style*="--up:var(--yellow)"]{--up:var(--pm-white-3)!important}
+
+/* ───────── Panggung kemasan: putih bercahaya, tulisan KRIBO jelas ───────── */
+.kx-stage{
+  background:
+    radial-gradient(ellipse 56% 12% at 50% 92%,rgba(140,50,0,.32),transparent 72%) padding-box,
+    radial-gradient(circle at 50% 50%,#fff 0%,rgba(255,255,255,.96) 28%,rgba(255,247,214,.75) 50%,transparent 76%) padding-box,
+    repeating-conic-gradient(from 0deg at 50% 52%,rgba(255,196,50,.26) 0 5deg,transparent 5deg 10deg) padding-box,
+    linear-gradient(165deg,#fffefa 0%,#fff3cf 62%,#ffe08a 100%) padding-box,
+    linear-gradient(135deg,#fff0b0,#e0a020 30%,#ffe38a 52%,#c88a1a 76%,#ffe9a0) border-box;
+  box-shadow:0 40px 70px -30px rgba(40,0,0,.75),0 0 0 6px rgba(255,255,255,.3),0 0 70px 6px rgba(255,236,160,.45),inset 0 0 0 9px rgba(255,255,255,.55),inset 0 0 0 10px rgba(224,160,32,.55)}
+.kx-stage::before{opacity:.4;background-image:radial-gradient(rgba(232,140,20,.6) 1px,transparent 1.5px)}
+.kx-stage::after{background:conic-gradient(from 180deg at 50% -8%,transparent 0 142deg,rgba(255,214,90,.55) 160deg,transparent 176deg 184deg,rgba(255,214,90,.55) 200deg,transparent 218deg)}
+.kx-glow{filter:blur(18px);opacity:.95}
+/* tulisan besar di belakang kantong: merah penuh + bayangan kuning */
+.kx-word{color:#f93517;-webkit-text-stroke:0;opacity:.95;
+  text-shadow:0 .035em 0 #ffd94a,0 .07em 0 rgba(160,20,0,.28)}
+/* angka & keterangan: merah tua di atas putih */
+.kx-count strong{color:#f93517;text-shadow:0 5px 0 #ffd94a,0 12px 18px rgba(160,30,0,.25)}
+.kx-count span{color:#b01200;text-shadow:none}
+.kx-meter i{background:rgba(249,53,23,.16);box-shadow:inset 0 0 0 1px rgba(249,53,23,.2)}
+.kx-drag-tip{background:#f93517;color:#fff;box-shadow:0 8px 16px -8px rgba(120,8,0,.7)}
+@media(max-width:900px){
+  .kx-count{background:rgba(255,255,255,.92);box-shadow:inset 0 0 0 1px rgba(224,160,32,.7),0 6px 14px -8px rgba(120,8,0,.5)}
+  .kx-count strong{text-shadow:none}
+}

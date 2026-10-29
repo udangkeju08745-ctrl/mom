@@ -1,0 +1,44 @@
+/* MODE RINGAN — aktif otomatis di HP / layar sentuh / perangkat low-end (html.lite, diset di <head>).
+   Tujuan: scroll tetap 60fps. Tampilan & isi tetap sama; yang dibuang hanya efek yang berat di GPU. */
+
+/* 1. Filter (blur & drop-shadow) pada gambar besar = penyebab utama patah-patah. Dibuang. */
+html.lite *,html.lite *::before,html.lite *::after{
+  filter:none!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  will-change:auto!important;
+  text-shadow:none!important;
+}
+html.lite{scroll-behavior:auto!important}
+
+/* 2. Semua animasi berulang dihentikan (dekorasi saja). Hanya pita berjalan yang tetap karena murni transform. */
+html.lite *,html.lite *::before,html.lite *::after{animation-iteration-count:1!important}
+html.lite .ribbon-track,html.lite .gl-ribbon-track{animation-iteration-count:infinite!important}
+
+/* 3. Dekorasi melayang yang berlapis-lapis disembunyikan di HP */
+html.lite .mk-deco,
+html.lite .about-burst,
+html.lite .hblob,
+html.lite .ab,
+html.lite .ft-burst,
+html.lite .crumb,
+html.lite .gl-ad-piece,
+html.lite .package-lines{display:none!important}
+
+/* 4. Gelombang pembatas antar-section: statis */
+html.lite .wave svg{animation:none!important}
+
+/* 5. Layer grain/overlay layar penuh dimatikan */
+html.lite .scene::after,
+html.lite .scene-grain,
+html.lite .hero .scene-grain{animation:none!important;display:none!important}
+
+/* 6. Bayangan kotak besar disederhanakan pada elemen interaktif yang sering dicat ulang */
+html.lite .cart-drawer,html.lite .floating-cart,html.lite .order-form,html.lite .cart-panel,
+html.lite .gl-card,html.lite .gl-ad-player{box-shadow:0 6px 16px rgba(86,18,0,.16)!important}
+
+/* 7. Scroll jari lebih mulus */
+html.lite body{-webkit-tap-highlight-color:transparent}
+
+/* 8. Halo blur di belakang pemutar video: tanpa filter jadi gambar tajam, jadi disembunyikan */
+html.lite #promosi #glAd .gl-ad-frame::before,
+html.lite .gl-ad-player::before{display:none!important}

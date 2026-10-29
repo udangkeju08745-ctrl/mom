@@ -1,0 +1,70 @@
+/* ============================================================
+   KEMASAN · KUNING — latar section Kemasan jadi kuning hangat (seperti Menu & hero)
+   • Panel kontrol kanan tetap merah (kontras dengan latar kuning)
+   • Judul & teks pengantar → merah / oranye / cokelat tua agar terbaca di atas kuning
+   Butuh menu-kuning.css (memakai .mk-deco). Hapus file ini + <div class="mk-deco"> di #kemasan
+   untuk kembali ke latar merah.
+   ============================================================ */
+.package-section{
+  --pk-bottom:#ffb82a;
+  background-color:#ffd84a;
+  background-image:
+    radial-gradient(ellipse 50% 40% at 28% 52%,rgba(255,248,200,.9),transparent 72%),
+    radial-gradient(ellipse 45% 36% at 90% 30%,rgba(255,170,40,.35),transparent 72%),
+    linear-gradient(180deg,#ffd84a 0%,#ffc82f 48%,var(--pk-bottom) 100%);
+  color:#5e1500}
+.package-section .scene-orb{display:none}
+.package-section .package-lines{opacity:.5;background:repeating-linear-gradient(120deg,transparent 0 92px,rgba(255,255,255,.55) 92px 93px)}
+.package-section::before{opacity:.28;background-image:radial-gradient(rgba(255,255,255,.95) 1px,transparent 1.5px)}
+.package-section .container{position:relative;z-index:2}
+
+/* judul section */
+.package-section .section-title h2{color:#e92a0c;text-shadow:.04em .05em 0 rgba(255,255,255,.75),.07em .09em 0 rgba(150,30,0,.25)}
+.package-section .section-title h2 em{background:none;color:#ff7a00;-webkit-text-fill-color:#ff7a00;text-shadow:.035em .05em 0 #a31d00}
+.package-section .section-title p:not(.eyebrow){color:#5e1500!important;opacity:1}
+.package-section .section-title .eyebrow{color:#e92a0c}
+.package-section .section-title .eyebrow::before{background:linear-gradient(90deg,transparent,#e92a0c)}
+.package-section .section-title .eyebrow::after{background:linear-gradient(90deg,#e92a0c,transparent)}
+
+/* panggung kiri: bingkai dibuat lebih tegas di atas kuning */
+.kx-stage{box-shadow:0 40px 70px -30px rgba(130,45,0,.65),0 0 0 6px rgba(255,255,255,.55),0 0 0 9px rgba(233,42,12,.55),inset 0 0 0 9px rgba(255,255,255,.55),inset 0 0 0 10px rgba(224,160,32,.55)}
+.kx-panel{box-shadow:0 30px 56px -26px rgba(130,30,0,.7),0 0 0 6px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.25)}
+
+/* ───────── Lengkung pembatas ───────── */
+/* atas (dari Menu): digambar ulang lewat CSS, menggantikan lengkung merah dari edge.js */
+.mn-edge--bottom{
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'><path d='M0 70 C200 118 400 118 620 80 S1000 24 1200 70 S1380 108 1440 90 V200 H0Z' fill='%23ffb02a'/><path d='M0 100 C220 146 420 148 640 112 S1020 58 1220 102 S1390 136 1440 120 V200 H0Z' fill='%23ffc42d'/><path d='M0 130 C240 172 440 176 660 142 S1040 92 1240 134 S1400 160 1440 148 V200 H0Z' fill='%23ffd84a'/><path d='M0 130 C240 172 440 176 660 142 S1040 92 1240 134 S1400 160 1440 148' fill='none' stroke='%23ffffff' stroke-opacity='.7' stroke-width='2.5' stroke-dasharray='2 12' stroke-linecap='round' transform='translate(0 -10)'/></svg>") center bottom/100% 100% no-repeat,#ff9d1e}
+.mn-edge--bottom svg,.mn-edge--bottom .mn-bubs{display:none!important}
+/* bawah (ke Galeri): warna atas gelombang = warna dasar Kemasan */
+.wave[style*="--up:var(--kx-bg"]{--up:#ffb82a!important}
+
+/* ============================================================
+   KEMASAN DI HP: pratinjau dikecilkan supaya semua kontrol muat di layar
+   ============================================================ */
+@media(max-width:900px){
+  .kx{gap:16px}
+  .kx-stage{width:min(100%,340px,42vh);height:auto;aspect-ratio:1/1;margin-inline:auto}
+  .kx-count{transform-origin:left bottom;scale:.82}
+  .kx-ctl{padding:16px 16px 14px}
+  .kx-head h3{font-size:clamp(20px,6vw,26px)}
+  .kx-head output{font-size:clamp(30px,9vw,40px)}
+  .kx-price strong{font-size:clamp(28px,8vw,38px)}
+  .package-section .section-title{margin-bottom:18px}
+  .package-section .section-title h2{font-size:clamp(28px,8vw,42px);line-height:1.05}
+}
+
+/* ============================================================
+   KEMASAN DI LAPTOP / DESKTOP: lebih kecil supaya pratinjau + panel muat dalam satu layar
+   ============================================================ */
+@media(min-width:901px){
+  .kx{max-width:min(1120px,94vw);margin-inline:auto}
+  .kx-stage{width:min(100%,76vh);height:auto;aspect-ratio:1/1;margin-inline:auto}
+  .kx-count{transform-origin:left bottom;scale:.85}
+  .kx-head h3{font-size:clamp(22px,2.2vw,32px)}
+  .kx-head output{font-size:clamp(34px,3.4vw,52px)}
+  .kx-price strong{font-size:clamp(32px,3.4vw,50px)}
+  .kx-stops button{padding-block:10px}
+  .kx-add{padding-block:14px}
+  .package-section .section-title{margin-bottom:22px}
+  .package-section .section-title h2{font-size:clamp(32px,3.8vw,56px);line-height:1.05}
+}

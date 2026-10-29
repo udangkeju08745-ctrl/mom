@@ -1,0 +1,111 @@
+/* ============================================================
+   MENU · KUNING — latar section Menu jadi kuning hangat (seperti hero beranda)
+   • Latar  : gradasi kuning → oranye, sinar matahari, gelombang putih, remah cemilan melayang
+   • Teks   : judul merah, kata "UDANG?" + semua aksen yang tadinya kuning → ORANYE
+   Dimuat setelah putih-merah.css → cukup hapus file ini (dan <div class="mk-deco">)
+   untuk kembali ke Menu merah.
+   ============================================================ */
+.menu-section{
+  --mk-top:#ffd84a;           /* warna paling atas — harus sama dengan lengkung atas */
+  --mk-bottom:#ff9d1e;        /* warna paling bawah — harus sama dengan lengkung bawah */
+  --mk-orange:#ff7a00;        /* pengganti kuning pada teks */
+  --mk-red:#e92a0c;
+  --mk-ink:#5e1500;
+  --rs-yellow:var(--mk-orange);
+  background:
+    radial-gradient(ellipse 56% 44% at 50% 46%,rgba(255,246,190,.85),transparent 72%),
+    linear-gradient(180deg,var(--mk-top) 0%,#ffc82f 42%,#ffb024 78%,var(--mk-bottom) 100%);
+  color:var(--mk-ink);
+}
+
+/* ───────── Lengkung pembatas ───────── */
+/* atas: digambar ulang lewat CSS supaya warnanya pasti kuning (bukan merah dari edge.js) */
+.mn-edge--top{
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'><path d='M0 78 C180 22 360 22 560 62 S960 118 1160 66 S1360 30 1440 52 V200 H0Z' fill='%23ff9d1e'/><path d='M0 104 C200 52 380 56 580 92 S980 144 1180 96 S1380 62 1440 82 V200 H0Z' fill='%23ffc02a'/><path d='M0 130 C220 84 400 90 600 120 S1000 168 1200 126 S1390 96 1440 112 V200 H0Z' fill='%23ffd84a'/><path d='M0 130 C220 84 400 90 600 120 S1000 168 1200 126 S1390 96 1440 112' fill='none' stroke='%23ffffff' stroke-opacity='.7' stroke-width='2.5' stroke-dasharray='2 12' stroke-linecap='round' transform='translate(0 -10)'/></svg>") center bottom/100% 100% no-repeat}
+.mn-edge--top svg,.mn-edge--top .mn-bubs{display:none!important}
+/* bawah: latar harus sama dengan warna dasar section; kurva ke section Kemasan tetap dari edge.js */
+.mn-edge--bottom{background:var(--mk-bottom,#ff9d1e)}
+
+/* ───────── Hiasan latar ───────── */
+.mk-deco{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%)}
+.mk-rays{position:absolute;left:50%;top:48%;width:170vmax;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.2) 0 5deg,transparent 5deg 10deg);
+  -webkit-mask-image:radial-gradient(circle,#000 0,transparent 46%);mask-image:radial-gradient(circle,#000 0,transparent 46%);
+  animation:mk-spin 120s linear infinite}
+.mk-swoosh{position:absolute;inset:0;width:100%;height:100%}
+.mk-dash{animation:mk-flow 26s linear infinite}
+.mk-bit{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:auto;opacity:.9;rotate:var(--r);
+  filter:drop-shadow(0 12px 10px rgba(150,60,0,.28));animation:mk-float 7s ease-in-out var(--d,0s) infinite alternate}
+@keyframes mk-float{from{transform:translateY(0) rotate(0)}to{transform:translateY(-22px) rotate(9deg)}}
+@keyframes mk-spin{to{rotate:360deg}}
+@keyframes mk-flow{to{stroke-dashoffset:-240}}
+@media(max-width:700px){.mk-bit:nth-of-type(n+5){display:none}.mk-bit{--s:54px!important}}
+@media(prefers-reduced-motion:reduce){.mk-rays,.mk-bit,.mk-dash{animation:none}}
+
+/* ───────── Teks kepala ───────── */
+.rs-eyebrow{filter:drop-shadow(0 7px 0 rgba(170,60,0,.3))}
+.rs-title{color:var(--mk-red);text-shadow:.04em .05em 0 rgba(255,255,255,.75),.075em .095em 0 rgba(150,30,0,.28)}
+/* kata kuning → ORANYE */
+.rs-hl{color:var(--mk-orange);text-shadow:.035em .05em 0 #a31d00}
+.rs-squig{color:var(--mk-orange);filter:drop-shadow(0 .03em 0 #a31d00)}
+.rs-lead{color:var(--mk-ink)}
+.rs-stats span{color:var(--mk-ink)}
+.rs-stats span+span{border-left-color:rgba(233,42,12,.4)}
+.rs-stats strong{color:var(--mk-red);text-shadow:0 .06em 0 rgba(255,255,255,.7)}
+
+/* pita berjalan */
+.rs-mb--a{background:#fff;color:var(--mk-red);box-shadow:0 10px 0 rgba(170,60,0,.28)}
+.rs-mb--b{background:var(--mk-orange);color:#fff}
+
+/* ───────── Panggung ───────── */
+.rs-u>span{-webkit-text-stroke:2px rgba(255,255,255,.8)}
+.rs-row:nth-child(2) .rs-u>span{color:rgba(255,255,255,.34);-webkit-text-stroke-color:rgba(255,255,255,.95)}
+.rs-u>b{color:var(--mk-orange)}
+.rs-ring text{fill:var(--mk-red)}
+.rs-disc{box-shadow:0 0 0 clamp(6px,.9vw,12px) #fff,0 0 0 calc(clamp(6px,.9vw,12px) + 4px) rgba(233,42,12,.85),0 44px 70px -30px rgba(120,40,0,.7)}
+.rs-ground{background:radial-gradient(closest-side,rgba(130,45,0,.5),transparent)}
+.rs-tilt img{filter:drop-shadow(0 26px 20px rgba(130,45,0,.38))}
+.rs-nav{background:#fff;color:var(--mk-red);box-shadow:0 8px 0 rgba(170,60,0,.3),0 0 0 3px rgba(233,42,12,.18)}
+.rs-nav:active{box-shadow:0 3px 0 rgba(170,60,0,.3)}
+.rs-hint{background:rgba(255,255,255,.7);color:#8a1200}
+.rs-hint svg{stroke:var(--mk-red)}
+.rs-pop{color:var(--mk-orange);-webkit-text-stroke-color:#7a1200}
+
+/* ───────── Dock pemilih rasa ───────── */
+.rs-dock{background:rgba(255,255,255,.6);box-shadow:inset 0 0 0 2px rgba(233,42,12,.28),0 20px 40px -18px rgba(150,50,0,.55)}
+.rs-pill{background:var(--mk-red);box-shadow:0 5px 0 rgba(122,18,0,.4)}
+.rs-tab{color:#8a1200}
+.rs-tab[aria-selected=true]{color:#fff}
+.rs-tab img{filter:drop-shadow(0 6px 4px rgba(130,45,0,.4))}
+
+/* ───────── Tiket & tombol ───────── */
+.rs-tk{filter:drop-shadow(0 24px 22px rgba(130,45,0,.38))}
+.rs-ticket{background:#fffaf0}
+.rs-cta i{background:#ffd94a}                 /* lingkaran panah tetap kuning di atas tombol merah */
+
+/* ───────── Penutup ───────── */
+.rs-foot{color:var(--mk-ink)}
+.rs-foot a{color:#d94a00}
+.rs-tab:focus-visible,.rs-nav:focus-visible,.rs-cta:focus-visible,.rs-foot a:focus-visible{outline-color:var(--mk-red)}
+
+/* ============================================================
+   PANGGUNG LEBIH KECIL + LEBIH RINGAN (supaya tidak patah-patah)
+   ============================================================ */
+/* ukuran: sekitar 25% lebih kecil dari sebelumnya, dan tidak lebih tinggi dari 74% layar */
+.menu-section .rs-stage{--sh:min(clamp(340px,38vw,470px),74vh)}
+@media(max-width:600px){.menu-section .rs-stage{--sh:clamp(330px,92vw,400px)}}
+
+/* efek berat dimatikan / diganti versi murah */
+.rs-glare{display:none}                                   /* kilau mix-blend di atas kemasan */
+.rs-tilt img{filter:none}                                 /* drop-shadow besar yang ikut bergerak */
+.rs-dock{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,255,255,.8)}
+.rs-tk{filter:drop-shadow(0 14px 14px rgba(130,45,0,.3))}
+.rs-disc{box-shadow:0 0 0 clamp(6px,.9vw,12px) #fff,0 0 0 calc(clamp(6px,.9vw,12px) + 4px) rgba(233,42,12,.85),0 30px 40px -24px rgba(120,40,0,.55)}
+
+/* hiasan latar: tidak berputar / mengalir terus-menerus */
+.mk-rays{width:120vmax;animation:none}
+.mk-dash{animation:none}
+.mk-bit{filter:none;will-change:transform}
+@media(max-width:700px){.mk-bit{animation:none}}

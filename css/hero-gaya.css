@@ -1,0 +1,32 @@
+/* ============================================================
+   HERO · GAYA JUDUL MENU — judul, tombol & pilihan rasa pakai Anton kapital + bayangan 3D
+   (sama dengan judul "TIM KEJU, BAWANG," di Menu). Hapus file ini untuk kembali ke gaya lama.
+   ============================================================ */
+#beranda{--hg-red:#e92a0c;--hg-orange:#ff7a00;--hg-ink:#5e1500;--hg-display:'Anton','Bebas Neue',Impact,'Arial Narrow',sans-serif}
+
+/* label rasa di atas judul */
+#beranda .hero-copy #heroName{font:400 clamp(15px,1.35vw,20px)/1 var(--hg-display);letter-spacing:.08em;text-transform:uppercase;color:var(--hg-red)}
+
+/* judul */
+#beranda .hero-copy h1{font:400 clamp(32px,3.2vw,56px)/1.04 var(--hg-display);text-transform:uppercase;letter-spacing:.008em;
+  color:var(--hg-red);text-shadow:.04em .05em 0 #fff,.075em .095em 0 rgba(150,30,0,.3)}
+#beranda .hero-copy h1 em{font-style:normal;background:none;-webkit-text-fill-color:var(--hg-orange);color:var(--hg-orange);
+  text-shadow:.035em .05em 0 #a31d00}
+
+/* deskripsi */
+#beranda .hero-copy #heroDesc{font:600 clamp(16px,1.3vw,19px)/1.7 'Figtree',var(--body,system-ui),sans-serif;color:var(--hg-ink)}
+
+/* tombol */
+#beranda #heroBuy{font:400 clamp(18px,1.6vw,24px)/1 var(--hg-display);letter-spacing:.07em;text-transform:uppercase;text-shadow:0 2px 0 rgba(120,8,0,.35)}
+#beranda #heroBuy span{font-family:'Figtree',system-ui,sans-serif;text-shadow:none;letter-spacing:0}
+
+/* pilihan rasa (kanan) */
+#beranda .hero-picker>p{font:400 clamp(20px,1.9vw,30px)/1.08 var(--hg-display);letter-spacing:.03em;text-transform:uppercase;color:var(--hg-ink)}
+#beranda .hero-picker>p b{color:var(--hg-orange);font-weight:400;text-shadow:.035em .05em 0 #a31d00}
+#beranda #heroChoices :is(button,a),#beranda #heroChoices :is(button,a) *{font-family:var(--hg-display);font-weight:400;
+  font-size:clamp(16px,1.3vw,21px);letter-spacing:.05em;text-transform:uppercase}
+#beranda .hero-nav{font-family:'Figtree',system-ui,sans-serif}
+
+/* bawah: slogan & harga */
+#beranda .hero-bottom>span{font:400 clamp(14px,1.3vw,19px)/1 var(--hg-display);letter-spacing:.16em;text-transform:uppercase;color:var(--hg-ink)}
+#beranda .hero-bottom strong{font-family:var(--hg-display);font-weight:400;letter-spacing:.02em;color:var(--hg-red)}

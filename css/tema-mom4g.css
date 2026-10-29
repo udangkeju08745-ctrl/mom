@@ -1,0 +1,343 @@
+/* ============================================================
+   TEMA MOM'S 4G — satu file untuk semua penyesuaian (putih-merah + kuning + gaya teks + performa)
+   Menggantikan: putih-merah, menu-kuning, kemasan-kuning, tentang-gaya, hero-gaya.
+   ============================================================ */
+
+/* >>>>>>>> putih-merah >>>>>>>> */
+/* ============================================================
+   PUTIH · MERAH — menggantikan oranye / peach / kuning
+   • Menu  : latar merah tebal, judul krem raksasa, kata terakhir
+             kuning, stiker putih miring (gaya "KECIL BENTUKNYA.")
+   • Kartu, Kemasan, Galeri, Momen : permukaan putih, teks merah
+   Dimuat paling akhir → cukup hapus file ini untuk kembali.
+   ============================================================ */
+:root{
+  --pm-red:#f93517; --pm-red-d:#d9230a; --pm-cream:#f9e9d2; --pm-yellow:#ffd94a;
+  --pm-white:#ffffff; --pm-white-2:#fffaf4; --pm-white-3:#fff3ea;
+  --kx-bg:#b51604;--kx-gold:#ffd94a;--kx-gold-d:#ffd94a
+}
+
+/* ───────── KEMASAN : merah tua + teks kuning ───────── */
+#kemasan{--kx-wine:#ffd94a;--kx-rose:#ffe680;--kx-accent:#ffd94a;--kx-ring:rgba(255,217,74,.6);--kx-deep:#ffd94a}
+/* panel kontrol: kaca merah tua */
+.kx-panel{
+  background:linear-gradient(170deg,#d9210a,#a60f00) padding-box,linear-gradient(135deg,#fff0b0,#e0a020 30%,#ffe38a 52%,#c88a1a 78%,#ffe9a0) border-box;
+  box-shadow:0 30px 56px -26px rgba(40,0,0,.8),0 0 0 6px rgba(255,217,74,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.kx-flavors{background:rgba(60,0,0,.35);box-shadow:inset 0 1px 3px rgba(0,0,0,.35)}
+.kx-flavors button{color:#ffe9a0}
+.kx-flavors button[aria-pressed=true]{background:linear-gradient(180deg,#ffe36e,#ffc928);color:#b01200;box-shadow:0 8px 16px -8px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.6)}
+.kx-flavors button[aria-pressed=true] i{box-shadow:0 0 0 2px #b01200,0 0 0 4px rgba(255,255,255,.7)}
+.kx-flavors button i{box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 0 3px rgba(0,0,0,.2)}
+.kx-mood{color:#ffd94a;background:rgba(255,255,255,.14)}
+.kx-mood::before{color:#fff}
+.kx-head h3{color:#ffd94a;text-shadow:0 2px 0 rgba(90,4,0,.4)}
+.kx-head output{color:#fff;text-shadow:0 3px 0 rgba(90,4,0,.45)}
+.kx-track{background:linear-gradient(180deg,#6e0900,#940e00);box-shadow:inset 0 2px 5px rgba(0,0,0,.55),0 0 0 2px rgba(255,217,74,.8),0 0 0 3px rgba(120,8,0,.6)}
+.kx-notch{background:#ffd94a;box-shadow:0 0 0 3px rgba(110,6,0,.55)}
+.kx-knob{color:#b01200}
+.kx-pull{color:#ffd94a}
+.kx-stops button{color:#fff;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1.5px rgba(255,217,74,.35)}
+.kx-stops button:hover{box-shadow:inset 0 0 0 1.5px #ffd94a}
+.kx-stops button.selected{background:linear-gradient(180deg,#ffe36e,#ffc928);color:#b01200;box-shadow:inset 0 0 0 2px #fff,0 8px 14px -8px rgba(0,0,0,.6)}
+.kx-price{color:#fff1d6;border-color:rgba(255,217,74,.7);background:linear-gradient(135deg,rgba(60,0,0,.32),rgba(60,0,0,.18))}
+.kx-price strong{color:#fff;text-shadow:0 3px 0 rgba(90,4,0,.4)}
+.kx-add{color:#b01200;background:linear-gradient(180deg,#ffe36e,#ffc928);box-shadow:0 16px 28px -14px rgba(0,0,0,.7),inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.kx-add>span:last-child{background:rgba(176,18,0,.14);box-shadow:inset 0 0 0 1px rgba(176,18,0,.4)}
+.kx-add:hover{box-shadow:0 20px 34px -14px rgba(0,0,0,.75),inset 0 0 0 1.5px #fff}
+.kx-help{color:rgba(255,241,214,.9)}
+.kx-link{color:#ffd94a;border-bottom-color:rgba(255,217,74,.6)}
+
+@media(max-width:900px){
+  .kx-ctl{background:linear-gradient(170deg,#d9210a,#a60f00) padding-box,linear-gradient(135deg,#fff0b0,#e0a020 30%,#ffe38a 52%,#c88a1a 78%,#ffe9a0) border-box;
+    box-shadow:0 22px 40px -22px rgba(40,0,0,.8),0 0 0 5px rgba(255,217,74,.2)}
+  .kx-panel{background:none;box-shadow:none}
+  .kx-count{background:rgba(110,6,0,.55);box-shadow:inset 0 0 0 1px rgba(255,217,74,.6),0 6px 14px -8px rgba(0,0,0,.6)}
+  .kx-count strong{text-shadow:none}
+}
+
+/* ───────── GALERI · MOMEN : putih ───────── */
+.promo-section{background:var(--pm-white)}
+.moments-section{background:var(--pm-white-3)}
+.moments-grid article{border-top-color:rgba(249,53,23,.3)}
+.promo-section .video-choice{border-color:rgba(249,53,23,.2)}
+
+/* ───────── Pembatas lengkung antar-section ───────── */
+.wave[style*="--up:var(--kx-bg"]{--down:var(--pm-white)!important;--up:#8f0d00!important}
+.wave[style*="--up:var(--peach)"]{--up:var(--pm-white)!important;--down:var(--pm-white-3)!important}
+.wave[style*="--up:var(--yellow)"]{--up:var(--pm-white-3)!important}
+
+/* ───────── Panggung kemasan: putih bercahaya, tulisan KRIBO jelas ───────── */
+.kx-stage{
+  background:
+    radial-gradient(ellipse 56% 12% at 50% 92%,rgba(140,50,0,.32),transparent 72%) padding-box,
+    radial-gradient(circle at 50% 50%,#fff 0%,rgba(255,255,255,.96) 28%,rgba(255,247,214,.75) 50%,transparent 76%) padding-box,
+    repeating-conic-gradient(from 0deg at 50% 52%,rgba(255,196,50,.26) 0 5deg,transparent 5deg 10deg) padding-box,
+    linear-gradient(165deg,#fffefa 0%,#fff3cf 62%,#ffe08a 100%) padding-box,
+    linear-gradient(135deg,#fff0b0,#e0a020 30%,#ffe38a 52%,#c88a1a 76%,#ffe9a0) border-box;
+  box-shadow:0 40px 70px -30px rgba(40,0,0,.75),0 0 0 6px rgba(255,255,255,.3),0 0 70px 6px rgba(255,236,160,.45),inset 0 0 0 9px rgba(255,255,255,.55),inset 0 0 0 10px rgba(224,160,32,.55)}
+.kx-stage::before{opacity:.4;background-image:radial-gradient(rgba(232,140,20,.6) 1px,transparent 1.5px)}
+.kx-stage::after{background:conic-gradient(from 180deg at 50% -8%,transparent 0 142deg,rgba(255,214,90,.55) 160deg,transparent 176deg 184deg,rgba(255,214,90,.55) 200deg,transparent 218deg)}
+.kx-glow{filter:blur(18px);opacity:.95}
+/* tulisan besar di belakang kantong: merah penuh + bayangan kuning */
+.kx-word{color:#f93517;-webkit-text-stroke:0;opacity:.95;
+  text-shadow:0 .035em 0 #ffd94a,0 .07em 0 rgba(160,20,0,.28)}
+/* angka & keterangan: merah tua di atas putih */
+.kx-count strong{color:#f93517;text-shadow:0 5px 0 #ffd94a,0 12px 18px rgba(160,30,0,.25)}
+.kx-count span{color:#b01200;text-shadow:none}
+.kx-meter i{background:rgba(249,53,23,.16);box-shadow:inset 0 0 0 1px rgba(249,53,23,.2)}
+.kx-drag-tip{background:#f93517;color:#fff;box-shadow:0 8px 16px -8px rgba(120,8,0,.7)}
+@media(max-width:900px){
+  .kx-count{background:rgba(255,255,255,.92);box-shadow:inset 0 0 0 1px rgba(224,160,32,.7),0 6px 14px -8px rgba(120,8,0,.5)}
+  .kx-count strong{text-shadow:none}
+}
+
+/* >>>>>>>> menu-kuning >>>>>>>> */
+/* ============================================================
+   MENU · KUNING — latar section Menu jadi kuning hangat (seperti hero beranda)
+   • Latar  : gradasi kuning → oranye, sinar matahari, gelombang putih, remah cemilan melayang
+   • Teks   : judul merah, kata "UDANG?" + semua aksen yang tadinya kuning → ORANYE
+   Dimuat setelah putih-merah.css → cukup hapus file ini (dan <div class="mk-deco">)
+   untuk kembali ke Menu merah.
+   ============================================================ */
+.menu-section{
+  --mk-top:#ffd84a;           /* warna paling atas — harus sama dengan lengkung atas */
+  --mk-bottom:#ff9d1e;        /* warna paling bawah — harus sama dengan lengkung bawah */
+  --mk-orange:#ff7a00;        /* pengganti kuning pada teks */
+  --mk-red:#e92a0c;
+  --mk-ink:#5e1500;
+  --rs-yellow:var(--mk-orange);
+  background:
+    radial-gradient(ellipse 56% 44% at 50% 46%,rgba(255,246,190,.85),transparent 72%),
+    linear-gradient(180deg,var(--mk-top) 0%,#ffc82f 42%,#ffb024 78%,var(--mk-bottom) 100%);
+  color:var(--mk-ink);
+}
+
+/* ───────── Lengkung pembatas ───────── */
+/* atas: digambar ulang lewat CSS supaya warnanya pasti kuning (bukan merah dari edge.js) */
+.mn-edge--top{
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'><path d='M0 78 C180 22 360 22 560 62 S960 118 1160 66 S1360 30 1440 52 V200 H0Z' fill='%23ff9d1e'/><path d='M0 104 C200 52 380 56 580 92 S980 144 1180 96 S1380 62 1440 82 V200 H0Z' fill='%23ffc02a'/><path d='M0 130 C220 84 400 90 600 120 S1000 168 1200 126 S1390 96 1440 112 V200 H0Z' fill='%23ffd84a'/><path d='M0 130 C220 84 400 90 600 120 S1000 168 1200 126 S1390 96 1440 112' fill='none' stroke='%23ffffff' stroke-opacity='.7' stroke-width='2.5' stroke-dasharray='2 12' stroke-linecap='round' transform='translate(0 -10)'/></svg>") center bottom/100% 100% no-repeat}
+.mn-edge--top svg,.mn-edge--top .mn-bubs{display:none!important}
+/* bawah: latar harus sama dengan warna dasar section; kurva ke section Kemasan tetap dari edge.js */
+.mn-edge--bottom{background:var(--mk-bottom,#ff9d1e)}
+
+/* ───────── Hiasan latar ───────── */
+.mk-deco{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%)}
+.mk-rays{position:absolute;left:50%;top:48%;width:170vmax;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.2) 0 5deg,transparent 5deg 10deg);
+  -webkit-mask-image:radial-gradient(circle,#000 0,transparent 46%);mask-image:radial-gradient(circle,#000 0,transparent 46%)}
+.mk-swoosh{position:absolute;inset:0;width:100%;height:100%}
+.mk-bit{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:auto;opacity:.9;rotate:var(--r);
+  }
+@media(max-width:700px){.mk-bit{display:none}.mk-rays{display:none}}
+
+/* ───────── Teks kepala ───────── */
+.rs-eyebrow{filter:drop-shadow(0 7px 0 rgba(170,60,0,.3))}
+.rs-title{color:var(--mk-red);text-shadow:.04em .05em 0 rgba(255,255,255,.75),.075em .095em 0 rgba(150,30,0,.28)}
+/* kata kuning → ORANYE */
+.rs-hl{color:var(--mk-orange);text-shadow:.035em .05em 0 #a31d00}
+.rs-squig{color:var(--mk-orange);filter:drop-shadow(0 .03em 0 #a31d00)}
+.rs-lead{color:var(--mk-ink)}
+.rs-stats span{color:var(--mk-ink)}
+.rs-stats span+span{border-left-color:rgba(233,42,12,.4)}
+.rs-stats strong{color:var(--mk-red);text-shadow:0 .06em 0 rgba(255,255,255,.7)}
+
+/* pita berjalan */
+.rs-mb--a{background:#fff;color:var(--mk-red);box-shadow:0 10px 0 rgba(170,60,0,.28)}
+.rs-mb--b{background:var(--mk-orange);color:#fff}
+
+/* ───────── Panggung ───────── */
+.rs-u>span{-webkit-text-stroke:2px rgba(255,255,255,.8)}
+.rs-row:nth-child(2) .rs-u>span{color:rgba(255,255,255,.34);-webkit-text-stroke-color:rgba(255,255,255,.95)}
+.rs-u>b{color:var(--mk-orange)}
+.rs-ring text{fill:var(--mk-red)}
+.rs-ground{background:radial-gradient(closest-side,rgba(130,45,0,.5),transparent)}
+.rs-tilt img{filter:drop-shadow(0 26px 20px rgba(130,45,0,.38))}
+.rs-nav{background:#fff;color:var(--mk-red);box-shadow:0 8px 0 rgba(170,60,0,.3),0 0 0 3px rgba(233,42,12,.18)}
+.rs-nav:active{box-shadow:0 3px 0 rgba(170,60,0,.3)}
+.rs-hint{background:rgba(255,255,255,.7);color:#8a1200}
+.rs-hint svg{stroke:var(--mk-red)}
+.rs-pop{color:var(--mk-orange);-webkit-text-stroke-color:#7a1200}
+
+/* ───────── Dock pemilih rasa ───────── */
+.rs-dock{background:rgba(255,255,255,.6);box-shadow:inset 0 0 0 2px rgba(233,42,12,.28),0 20px 40px -18px rgba(150,50,0,.55)}
+.rs-pill{background:var(--mk-red);box-shadow:0 5px 0 rgba(122,18,0,.4)}
+.rs-tab{color:#8a1200}
+.rs-tab[aria-selected=true]{color:#fff}
+.rs-tab img{filter:drop-shadow(0 6px 4px rgba(130,45,0,.4))}
+
+/* ───────── Tiket & tombol ───────── */
+.rs-tk{filter:drop-shadow(0 24px 22px rgba(130,45,0,.38))}
+.rs-ticket{background:#fffaf0}
+.rs-cta i{background:#ffd94a}                 /* lingkaran panah tetap kuning di atas tombol merah */
+
+/* ───────── Penutup ───────── */
+.rs-foot{color:var(--mk-ink)}
+.rs-foot a{color:#d94a00}
+.rs-tab:focus-visible,.rs-nav:focus-visible,.rs-cta:focus-visible,.rs-foot a:focus-visible{outline-color:var(--mk-red)}
+
+/* ============================================================
+   PANGGUNG LEBIH KECIL + LEBIH RINGAN (supaya tidak patah-patah)
+   ============================================================ */
+/* ukuran: sekitar 25% lebih kecil dari sebelumnya, dan tidak lebih tinggi dari 74% layar */
+.menu-section .rs-stage{--sh:min(clamp(340px,38vw,470px),74vh)}
+@media(max-width:600px){.menu-section .rs-stage{--sh:clamp(330px,92vw,400px)}}
+
+/* efek berat dimatikan / diganti versi murah */
+.rs-glare{display:none}                                   /* kilau mix-blend di atas kemasan */
+.rs-tilt img{filter:none}                                 /* drop-shadow besar yang ikut bergerak */
+.rs-dock{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,255,255,.8)}
+.rs-tk{filter:drop-shadow(0 14px 14px rgba(130,45,0,.3))}
+.rs-disc{box-shadow:0 0 0 clamp(6px,.9vw,12px) #fff,0 0 0 calc(clamp(6px,.9vw,12px) + 4px) rgba(233,42,12,.85),0 30px 40px -24px rgba(120,40,0,.55)}
+
+/* hiasan latar: tidak berputar / mengalir terus-menerus */
+.mk-rays{width:120vmax}
+
+/* >>>>>>>> kemasan-kuning >>>>>>>> */
+/* ============================================================
+   KEMASAN · KUNING — latar section Kemasan jadi kuning hangat (seperti Menu & hero)
+   • Panel kontrol kanan tetap merah (kontras dengan latar kuning)
+   • Judul & teks pengantar → merah / oranye / cokelat tua agar terbaca di atas kuning
+   Butuh menu-kuning.css (memakai .mk-deco). Hapus file ini + <div class="mk-deco"> di #kemasan
+   untuk kembali ke latar merah.
+   ============================================================ */
+.package-section{
+  --pk-bottom:#ffb82a;
+  background-color:#ffd84a;
+  background-image:
+    radial-gradient(ellipse 50% 40% at 28% 52%,rgba(255,248,200,.9),transparent 72%),
+    radial-gradient(ellipse 45% 36% at 90% 30%,rgba(255,170,40,.35),transparent 72%),
+    linear-gradient(180deg,#ffd84a 0%,#ffc82f 48%,var(--pk-bottom) 100%);
+  color:#5e1500}
+.package-section .scene-orb{display:none}
+.package-section .package-lines{opacity:.5;background:repeating-linear-gradient(120deg,transparent 0 92px,rgba(255,255,255,.55) 92px 93px)}
+.package-section::before{opacity:.28;background-image:radial-gradient(rgba(255,255,255,.95) 1px,transparent 1.5px)}
+.package-section .container{position:relative;z-index:2}
+
+/* judul section */
+.package-section .section-title h2{color:#e92a0c;text-shadow:.04em .05em 0 rgba(255,255,255,.75),.07em .09em 0 rgba(150,30,0,.25)}
+.package-section .section-title h2 em{background:none;color:#ff7a00;-webkit-text-fill-color:#ff7a00;text-shadow:.035em .05em 0 #a31d00}
+.package-section .section-title p:not(.eyebrow){color:#5e1500!important;opacity:1}
+.package-section .section-title .eyebrow{color:#e92a0c}
+.package-section .section-title .eyebrow::before{background:linear-gradient(90deg,transparent,#e92a0c)}
+.package-section .section-title .eyebrow::after{background:linear-gradient(90deg,#e92a0c,transparent)}
+
+/* panggung kiri: bingkai dibuat lebih tegas di atas kuning */
+.kx-stage{box-shadow:0 40px 70px -30px rgba(130,45,0,.65),0 0 0 6px rgba(255,255,255,.55),0 0 0 9px rgba(233,42,12,.55),inset 0 0 0 9px rgba(255,255,255,.55),inset 0 0 0 10px rgba(224,160,32,.55)}
+.kx-panel{box-shadow:0 30px 56px -26px rgba(130,30,0,.7),0 0 0 6px rgba(255,255,255,.45),inset 0 1px 0 rgba(255,255,255,.25)}
+
+/* ───────── Lengkung pembatas ───────── */
+/* atas (dari Menu): digambar ulang lewat CSS, menggantikan lengkung merah dari edge.js */
+.mn-edge--bottom{
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'><path d='M0 70 C200 118 400 118 620 80 S1000 24 1200 70 S1380 108 1440 90 V200 H0Z' fill='%23ffb02a'/><path d='M0 100 C220 146 420 148 640 112 S1020 58 1220 102 S1390 136 1440 120 V200 H0Z' fill='%23ffc42d'/><path d='M0 130 C240 172 440 176 660 142 S1040 92 1240 134 S1400 160 1440 148 V200 H0Z' fill='%23ffd84a'/><path d='M0 130 C240 172 440 176 660 142 S1040 92 1240 134 S1400 160 1440 148' fill='none' stroke='%23ffffff' stroke-opacity='.7' stroke-width='2.5' stroke-dasharray='2 12' stroke-linecap='round' transform='translate(0 -10)'/></svg>") center bottom/100% 100% no-repeat,#ff9d1e}
+.mn-edge--bottom svg,.mn-edge--bottom .mn-bubs{display:none!important}
+/* bawah (ke Galeri): warna atas gelombang = warna dasar Kemasan */
+.wave[style*="--up:var(--kx-bg"]{--up:#ffb82a!important}
+
+/* ============================================================
+   KEMASAN DI HP: pratinjau dikecilkan supaya semua kontrol muat di layar
+   ============================================================ */
+@media(max-width:900px){
+  .kx{gap:16px}
+  .kx-stage{width:min(100%,340px,42vh);height:auto;aspect-ratio:1/1;margin-inline:auto}
+  .kx-count{transform-origin:left bottom;scale:.82}
+  .kx-ctl{padding:16px 16px 14px}
+  .kx-head h3{font-size:clamp(20px,6vw,26px)}
+  .kx-head output{font-size:clamp(30px,9vw,40px)}
+  .kx-price strong{font-size:clamp(28px,8vw,38px)}
+  .package-section .section-title{margin-bottom:18px}
+  .package-section .section-title h2{font-size:clamp(28px,8vw,42px);line-height:1.05}
+}
+
+/* ============================================================
+   KEMASAN DI LAPTOP / DESKTOP: lebih kecil supaya pratinjau + panel muat dalam satu layar
+   ============================================================ */
+@media(min-width:901px){
+  .kx{max-width:min(1120px,94vw);margin-inline:auto}
+  .kx-stage{width:min(100%,76vh);height:auto;aspect-ratio:1/1;margin-inline:auto}
+  .kx-count{transform-origin:left bottom;scale:.85}
+  .kx-head h3{font-size:clamp(22px,2.2vw,32px)}
+  .kx-head output{font-size:clamp(34px,3.4vw,52px)}
+  .kx-price strong{font-size:clamp(32px,3.4vw,50px)}
+  .kx-stops button{padding-block:10px}
+  .kx-add{padding-block:14px}
+  .package-section .section-title{margin-bottom:22px}
+  .package-section .section-title h2{font-size:clamp(32px,3.8vw,56px);line-height:1.05}
+}
+
+/* >>>>>>>> tentang-gaya >>>>>>>> */
+/* ============================================================
+   TENTANG · GAYA JUDUL MENU — judul pakai Anton kapital + bayangan 3D (seperti "TIM KEJU, BAWANG,")
+   Teks isi: Figtree tebal, cokelat tua; kata penting merah. Hapus file ini untuk kembali ke gaya lama.
+   ============================================================ */
+#tentang{--tt-red:#e92a0c;--tt-orange:#ff7a00;--tt-ink:#5e1500;--tt-display:'Anton','Bebas Neue',Impact,'Arial Narrow',sans-serif}
+
+/* label kecil di atas judul */
+#tentang .about-copy .eyebrow{display:inline-flex;align-items:center;gap:10px;width:fit-content;rotate:-2.5deg;
+  padding:12px 26px 10px;background:#fff;color:var(--tt-red);border-radius:999px;
+  font:400 clamp(15px,1.45vw,21px)/1 var(--tt-display);letter-spacing:.07em;text-transform:uppercase;
+  box-shadow:0 6px 0 rgba(170,60,0,.25)}
+
+/* judul */
+#tentang .about-copy h2{font:400 clamp(38px,5.6vw,88px)/1.02 var(--tt-display);text-transform:uppercase;letter-spacing:.008em;
+  color:var(--tt-red);text-shadow:.04em .05em 0 #fff,.075em .095em 0 rgba(150,30,0,.3)}
+#tentang .about-copy h2 em{font-style:normal;background:none;-webkit-text-fill-color:var(--tt-orange);color:var(--tt-orange);
+  text-shadow:.035em .05em 0 #a31d00}
+
+/* paragraf */
+#tentang .about-copy p:not(.eyebrow){font:600 clamp(16px,1.3vw,19.5px)/1.75 'Figtree',var(--body,system-ui),sans-serif;
+  color:var(--tt-ink);max-width:54ch}
+#tentang .about-copy p b{color:var(--tt-red);font-weight:800}
+
+/* angka ringkas */
+#tentang .about-facts span{font:700 clamp(11px,.95vw,13px)/1.2 'Figtree',var(--body,system-ui),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--tt-ink)}
+#tentang .about-facts strong{display:block;margin-bottom:6px;font:400 clamp(30px,3.2vw,48px)/1 var(--tt-display);letter-spacing:.01em;text-transform:none;
+  color:var(--tt-red);text-shadow:0 .06em 0 rgba(255,255,255,.85)}
+
+/* >>>>>>>> hero-gaya >>>>>>>> */
+/* ============================================================
+   HERO · GAYA JUDUL MENU — judul, tombol & pilihan rasa pakai Anton kapital + bayangan 3D
+   (sama dengan judul "TIM KEJU, BAWANG," di Menu). Hapus file ini untuk kembali ke gaya lama.
+   ============================================================ */
+#beranda{--hg-red:#e92a0c;--hg-orange:#ff7a00;--hg-ink:#5e1500;--hg-display:'Anton','Bebas Neue',Impact,'Arial Narrow',sans-serif}
+
+/* label rasa di atas judul */
+#beranda .hero-copy #heroName{font:400 clamp(15px,1.35vw,20px)/1 var(--hg-display);letter-spacing:.08em;text-transform:uppercase;color:var(--hg-red)}
+
+/* judul */
+#beranda .hero-copy h1{font:400 clamp(32px,3.2vw,56px)/1.04 var(--hg-display);text-transform:uppercase;letter-spacing:.008em;
+  color:var(--hg-red);text-shadow:.04em .05em 0 #fff,.075em .095em 0 rgba(150,30,0,.3)}
+#beranda .hero-copy h1 em{font-style:normal;background:none;-webkit-text-fill-color:var(--hg-orange);color:var(--hg-orange);
+  text-shadow:.035em .05em 0 #a31d00}
+
+/* deskripsi */
+#beranda .hero-copy #heroDesc{font:600 clamp(16px,1.3vw,19px)/1.7 'Figtree',var(--body,system-ui),sans-serif;color:var(--hg-ink)}
+
+/* tombol */
+#beranda #heroBuy{font:400 clamp(18px,1.6vw,24px)/1 var(--hg-display);letter-spacing:.07em;text-transform:uppercase;text-shadow:0 2px 0 rgba(120,8,0,.35)}
+#beranda #heroBuy span{font-family:'Figtree',system-ui,sans-serif;text-shadow:none;letter-spacing:0}
+
+/* pilihan rasa (kanan) */
+#beranda .hero-picker>p{font:400 clamp(20px,1.9vw,30px)/1.08 var(--hg-display);letter-spacing:.03em;text-transform:uppercase;color:var(--hg-ink)}
+#beranda .hero-picker>p b{color:var(--hg-orange);font-weight:400;text-shadow:.035em .05em 0 #a31d00}
+#beranda #heroChoices :is(button,a),#beranda #heroChoices :is(button,a) *{font-family:var(--hg-display);font-weight:400;
+  font-size:clamp(16px,1.3vw,21px);letter-spacing:.05em;text-transform:uppercase}
+#beranda .hero-nav{font-family:'Figtree',system-ui,sans-serif}
+
+/* bawah: slogan & harga */
+#beranda .hero-bottom>span{font:400 clamp(14px,1.3vw,19px)/1 var(--hg-display);letter-spacing:.16em;text-transform:uppercase;color:var(--hg-ink)}
+#beranda .hero-bottom strong{font-family:var(--hg-display);font-weight:400;letter-spacing:.02em;color:var(--hg-red)}
+
+/* ============================================================
+   PERFORMA — buang efek berat supaya scroll & animasi tidak patah-patah
+   ============================================================ */
+/* blur kaca (backdrop-filter) menghitung ulang piksel di belakangnya setiap scroll → matikan di mana-mana */
+*,*::before,*::after{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+/* tekstur grain layar penuh & hiasan yang bergerak terus-menerus */
+.scene-grain{display:none}
+.hblob,.ab,.scene-orb,.sunburst.ambient{animation:none!important}
+/* remah hiasan hero: cukup 7 */
+.hero-debris .debris:nth-child(n+8){display:none}
+/* tulisan raksasa di Menu: tanpa mask (mask ikut dihitung ulang tiap frame) */
+.rs-rows{-webkit-mask-image:none;mask-image:none}
